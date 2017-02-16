@@ -1,0 +1,545 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/carousel.css" rel="stylesheet" type="text/css"/>
+
+
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <!-- Cabecera -->
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Sistema de Control de Procesos </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Inicio</a></li>
+                            <li class="dropdown">
+                                <a href="#about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion de Registro<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="siscolA_gestion_reg.html" >Registro de Alumnos</a></li>
+                                    <li><a href="#about">Registro de trabajores</a></li>
+                                    <li><a href="#about">Asignacion de Cursos</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matricula<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#about">Registrar de Matricula</a></li>
+                                    <li><a href="#about">Modificar de Matricula</a></li>
+                                    <li><a href="#about">Eliminar de Matricula</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Control de Notas<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#about">Registrar Notas</a></li>
+                                    <li><a href="#about">Rendimiento de Alumnos</a></li>
+
+                                </ul>
+                            </li>                               
+                            <li class="dropdown">
+                                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mantenimiento del sistema<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#about">Fijar fecha limite para insercion de notas</a></li>                                      
+                                    <li><a href="#about">Extender fecha limite</a></li>                                      
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registro de Actividades<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#about">Historial de actividades en el sistema</a></li>                                      
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#contact" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boletas de Notas<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#about">Impresion de Notas por unidad y bimestral</a></li>                                      
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Configurar cuenta</a></li>
+
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Extension</li>
+                                    <li><a href="index.html"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Salir</a></li>              
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Cabecera -->
+
+        <script>
+            function myFunction() {
+                var porId = $('input:radio[name=reg_cargo]:checked').val();
+                if (porId == "Auxiliar") {
+                    document.getElementById("demo").innerHTML = "<label for='cargo' class='control-label col-xs-2'>Nivel  </label> <div class='btn-group col-xs-10' data-toggle='buttons'> <label class='btn btn-primary active'>  <input type='radio' autocomplete='off' checked name='reg_nivel' value='Primaria' > Primaria </label><label class='btn btn-primary'><input type='radio' autocomplete='off' name='reg_nivel' value='Secundaria'> Secundaria</label></div>";
+                } else {
+                    document.getElementById("demo").innerHTML = "";
+                }
+
+            }
+        </script> 
+
+        <!-- Menu otra vista -->
+        <div class="container">
+
+            <!-- Nav tabs -->
+            <div class="panel-default">
+                <div class="panel-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Registro de Trabajadores</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Registro de Alumnos</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Asignacion de curso</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="panel panel-default">
+                                <div class="panel panel-heading">
+                                    Ingrese los datos
+                                </div>
+                                <div class="panel panel-body">
+                                    <form id="empleados">
+                                        <div class="form-group">
+                                            <label for="reg_codigo" class="control-label col-xs-2">Codigo (DNI)</label>
+                                            <div class="col-xs-10">
+                                                <input required type=number class="form-control" id="reg_codigo" placeholder="DNI">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_nombres" class="control-label col-xs-2">Nombres</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_nombres" placeholder="Nombres">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_apellidos_p" class="control-label col-xs-2">Apellidos Paterno</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_apellidos_p" placeholder="Apellidos Paterno">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_apellidos_m" class="control-label col-xs-2">Apellidos Materno</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_apellidos_m" placeholder="Apellidos Materno">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="reg_edad" class="control-label col-xs-2">Edad</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="number" class="form-control" id="reg_edad" placeholder="Edad">
+                                            </div>
+                                        </div>                                        
+                                        <div class="form-group">
+                                            <label for="reg_email" class="control-label col-xs-2">E-mail</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="email" class="form-control" id="reg_email" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_telf" class="control-label col-xs-2">Nº Telf/Cel</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="email" class="form-control" id="reg_telf" placeholder="Nº Telf/Cel">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_fech" class="control-label col-xs-2">Fecha de Nacimiento</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="date" class="form-control" id="reg_fech" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_direccion" class="control-label col-xs-2">Direccion</label>
+                                            <div class="col-xs-10" >
+                                                <textarea required rows="3" class="form-control" id="reg_direccion" placeholder="Direccion"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <label for="cargo" class="control-label col-xs-2">Cargo</label>
+                                            <div class="btn-group col-xs-10" data-toggle="buttons" onChange="myFunction()">
+                                                <label class="btn btn-primary active">
+                                                    <input type="radio" autocomplete="off" checked name="reg_cargo" value="Secretaria" > Secretaria
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="radio" autocomplete="off" name="reg_cargo" value="Docente"> Docente
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="radio" autocomplete="off" name="reg_cargo" value="Auxiliar"> Auxiliar
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div id="demo" >
+
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+                                    </form>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="panel panel-default">
+                                <div class="panel panel-heading">
+                                    Ingrese los datos
+                                </div>
+                                <div class="panel panel-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="reg_codigo" class="control-label col-xs-2">Codigo (DNI)</label>
+                                            <div class="col-xs-10">
+                                                <input required type=number class="form-control" id="reg_codigo" placeholder="DNI">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_nombres" class="control-label col-xs-2">Nombres</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_nombres" placeholder="Nombres">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_apellidos_p" class="control-label col-xs-2">Apellidos Paterno</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_apellidos_p" placeholder="Apellidos Paterno">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_apellidos_m" class="control-label col-xs-2">Apellidos Materno</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="text" class="form-control" id="reg_apellidos_m" placeholder="Apellidos Materno">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="reg_edad" class="control-label col-xs-2">Edad</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="number" class="form-control" id="reg_edad" placeholder="Edad">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_email" class="control-label col-xs-2">E-mail</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="email" class="form-control" id="reg_email" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_telf" class="control-label col-xs-2">Nº Telf/Cel</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="number" class="form-control" id="reg_telf" placeholder="Nº Telf/Cel">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_fech" class="control-label col-xs-2">Fecha de Nacimiento</label>
+                                            <div class="col-xs-10" >
+                                                <input required type="date" class="form-control" id="reg_fech" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_direccion" class="control-label col-xs-2">Direccion</label>
+                                            <div class="col-xs-10" >
+                                                <textarea required rows="3" class="form-control" id="reg_direccion" placeholder="Direccion"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" >
+                                            <label for="reg_sexo" class="control-label col-xs-2">Sexo: </label>
+                                            <div class="btn-group col-xs-10" data-toggle="buttons" onChange="myFunction()">
+                                                <label class="btn btn-primary active">
+                                                    <input type="radio" autocomplete="off" checked name="areg_sexo" value="Masculino" > Masculino
+                                                </label>
+                                                <label class="btn btn-primary">
+                                                    <input type="radio" autocomplete="off" name="areg_sexo" value="Femenino"> Femenino
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_hobbies" class="control-label col-xs-2">Hobbies del estudiante</label>
+                                            <div class="col-xs-10" >
+                                                <textarea required rows="3" class="form-control" id="reg_hobbies" placeholder="Hobbies del estudiante"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_observaciones" class="control-label col-xs-2">Observaciones medicas del estudiante</label>
+                                            <div class="col-xs-10" >
+                                                <textarea required rows="3" class="form-control" id="reg_observaciones" placeholder="Observaciones medicas del estudiante"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="reg_parientes" class="control-label col-xs-2">Parientes</label>
+                                            <div class="col-xs-10" ><!-- Button trigger modal -->
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Codigo DNI</th>
+                                                            <th>Apellido Paterno</th>
+                                                            <th>Apellido Materno</th>
+                                                            <th>Telefono</th>
+                                                            <th>Edad</th>
+                                                            <th>Sexo</th>
+                                                            <th>Parentesco</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="cont_t">
+
+
+                                                    </tbody>
+                                                </table>
+
+
+
+
+                                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                    Agregar Parientes
+                                                </button>
+
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>  
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <div class="panel panel-default">
+                                <div class="panel panel-heading">
+                                    Ingrese sus datos
+                                </div>
+                                <div class="panel panel-body">
+                                    <div class="form-group row">
+                                        <div class="col-lg-2">
+                                            <label class="control-label">Escoja Docente</label>
+                                        </div> 
+                                        <div class="col-lg-10">
+                                            <select name="docente" class=" btn btn-primary" >
+                                                <option>Escoja Docente</option>
+                                                <option>Juan</option>
+                                                <option>Jorge</option>
+                                                <option>Enrrique</option>
+                                            </select>
+                                        </div>
+                                    </div> 
+
+                                    <div class="form-group row" >
+                                        <label for="nivel" class="control-label col-xs-2">Nivel Academico: </label>
+                                        <div class="btn-group col-xs-10" data-toggle="buttons" onchange="grados()">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off"  name="nivel" value="Primaria" > Primaria
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" name="nivel" value="Secundaria"> Secundaria
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row" id = "group_Grado" style='display:none;'>
+                                        <div class="col-lg-2">
+                                            <label class="control-label">Escoja Grado</label>
+                                        </div> 
+                                        <div class="col-lg-10" id = "grado">
+
+                                        </div>
+                                    </div> 
+                                    <div class="form-group row">
+                                        <div class="col-lg-2">
+                                            <label class="control-label">Escoja Area</label>
+                                        </div> 
+                                        <div class="col-lg-10" style='display:none;' id="areas">
+                                            <select id = "area" name="area" class=" btn btn-primary">
+                                                <option>Escoja Area</option>
+                                                <option>Matematica</option>
+                                                <option>Comunicacion</option>
+                                                <option>Historia</option>
+                                            </select>
+                                        </div>
+                                    </div> 
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            var primaria = ["Primer", "Segundo", "Tercero", "Cuarto", "Quinto", "Sexto"];
+            var secundaria = ["Primer", "Segundo", "Tercero", "Cuarto", "Quinto"];
+            var primer_primaria = ["Matematica", "Comunicacion", "Historia"];
+            var segundo_primaria = ["Matematica", "Comunicacion", "Historia", "Fisica"];
+            var salida = "<option>Escoja Grado</option>";
+            var opc = $('input:radio[name=nivel]:checked').val();
+
+            function grados() {
+                document.getElementById('group_Grado').style.display = 'block';
+                if (opc == "Primaria") {
+                    salida = "<select  name='grado' class= 'btn btn-primary'><option>Escoja Grado</option>";
+                    for (i = 0; i < primaria.length; i++) {
+                        salida += "<option value=" + secundaria[i] + ">" + primaria[i] + "</option>";
+                    }
+                    salida += "</select>";
+
+                } else {
+                    salida = "<select  name='grado' class= 'btn btn-primary'><option>Escoja Grado</option>";
+
+                    for (i = 0; i < secundaria.length; i++) {
+                        salida += "<option value=" + secundaria[i] + ">" + secundaria[i] + "</option>";
+                    }
+                    salida += "</select>";
+                }
+
+                $('#grado').html(salida);
+            }
+
+            function areas_primaria() {
+                document.getElementById('areas').style.display = 'block';
+                var grado = $('grado').val();
+            }
+        </script>
+
+        <!-- Menu otra vista -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Llenar Datos</h4>
+                    </div>
+                    <div class="modal-body" id="contenido">                        
+                        <input required type=number class="form-control" id="freg_codigo" placeholder="DNI">
+                        <input required type="text" class="form-control" id="freg_apellidos_p" placeholder="Apellidos Paterno">
+                        <input required type="text" class="form-control" id="freg_apellidos_m" placeholder="Apellidos Materno">
+                        <input required type="text" class="form-control" id="freg_nombres" placeholder="Nombres">
+                        <input required type="number" class="form-control" id="freg_edad" placeholder="Edad">
+                        <label>
+                            <input class="btn btn-primary active" type="radio" autocomplete="off" checked name="fareg_sexo" value="Masculino" > Masculino
+                        </label>
+                        <label>
+                            <input class="btn btn-primary" type="radio" autocomplete="off" name="fareg_sexo" value="Femenino"> Femenino
+                        </label>
+                        <input required type="number" class="form-control" id="freg_telf" placeholder="Celular">
+                        <label>
+                            <input class="btn btn-primary active" type="radio" autocomplete="off" checked name="fareg_par" value="tipo1" > tipo1
+                        </label>
+                        <label>
+                            <input class="btn btn-primary" type="radio" autocomplete="off" name="fareg_par" value="tipo2"> tipo1
+                        </label>
+                        <label>
+                            <input class="btn btn-primary" type="radio" autocomplete="off" name="fareg_par" value="tipo3"> otros
+                        </label>
+                    </div>
+                    <script>
+                        function enviar() {
+                            var dni = $("#freg_codigo").val();
+                            var app = $("#freg_apellidos_p").val();
+                            var apm = $("#freg_apellidos_m").val();
+                            var nom = $("#freg_nombres").val();
+                            var edad = $("#freg_edad").val();
+                            var telf = $("#freg_telf").val();
+                            var sexo = "a";
+                            var par = "a";
+                            var salida = "<tr> <td>" + dni + "</td>" + "<td>" + app + "</td>" + "<td>" + nom + "</td>" + "<td>" + edad + "</td>\n\
+                            " + "<td>" + telf + "</td>" + "<td>" + sexo + "</td>" + "<td>" + par + "</td></tr>";
+
+                            $("#cont_t").html($("#cont_t").html() + salida);
+                        }
+
+                    </script>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="enviar()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <hr>
+            <footer>
+                <p>&copy; Company 2015</p>
+            </footer>
+        </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+                            (function (b, o, i, l, e, r) {
+                                b.GoogleAnalyticsObject = l;
+                                b[l] || (b[l] =
+                                        function () {
+                                            (b[l].q = b[l].q || []).push(arguments)
+                                        });
+                                b[l].l = +new Date;
+                                e = o.createElement(i);
+                                r = o.getElementsByTagName(i)[0];
+                                e.src = '//www.google-analytics.com/analytics.js';
+                                r.parentNode.insertBefore(e, r)
+                            }
+                            (window, document, 'script', 'ga'));
+                            ga('create', 'UA-XXXXX-X', 'auto');
+                            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
