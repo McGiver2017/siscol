@@ -62,5 +62,21 @@ $(document).ready(function () {
             'display': 'block',
         });
     });
+//    $('#gcodigo').keypress(function () {
+//
+//        $('#gcodigo').addClass('has-success').addClass('has-feedback');
+//        $('#ccodigo').html($('#ccodigo').html() + "<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>\n\
+//<span id='inputSuccess3Status' class='sr-only'>(success)</span>");
+//    });
+
 }
 );
+function myFunction() {
+    var porId = $('input:radio[name=reg_cargo]:checked').val();
+    if (porId == "Auxiliar") {
+        document.getElementById("demo").innerHTML = "<label for='cargo' class='control-label col-sm-3'>Nivel  </label> <div class='btn-group col-sm-9' data-toggle='buttons'> <label class='btn btn-primary active'>  <input type='radio' autocomplete='off' checked name='reg_nivel' value='Primaria' > Primaria </label><label class='btn btn-primary'><input type='radio' autocomplete='off' name='reg_nivel' value='Secundaria'> Secundaria</label></div>";
+    } else {
+        document.getElementById("demo").innerHTML = "";
+    }
+
+}

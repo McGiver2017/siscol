@@ -13,8 +13,6 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/carousel.css" rel="stylesheet" type="text/css"/>
-
-
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
@@ -107,17 +105,7 @@
         </div>
         <!-- Cabecera -->
 
-        <script>
-            function myFunction() {
-                var porId = $('input:radio[name=reg_cargo]:checked').val();
-                if (porId == "Auxiliar") {
-                    document.getElementById("demo").innerHTML = "<label for='cargo' class='control-label col-xs-2'>Nivel  </label> <div class='btn-group col-xs-10' data-toggle='buttons'> <label class='btn btn-primary active'>  <input type='radio' autocomplete='off' checked name='reg_nivel' value='Primaria' > Primaria </label><label class='btn btn-primary'><input type='radio' autocomplete='off' name='reg_nivel' value='Secundaria'> Secundaria</label></div>";
-                } else {
-                    document.getElementById("demo").innerHTML = "";
-                }
 
-            }
-        </script>
 
         <!-- Menu otra vista -->
         <div class="container">
@@ -135,96 +123,154 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
-                            <div class="panel panel-default">
-                                <div class="panel panel-heading">
-                                    Ingrese los datos
+                            <div class="col-lg-12">
+                                <style>
+                                    input:required:invalid, input:focus:invalid {
+                                        color: red;
+                                        background-image: url(img/succes.jpg);
+                                        background-position: right top;
+                                        background-repeat: no-repeat;
+                                    }
+                                    input:required:valid {
+                                        color: blue;
+                                        background-image: url(img/succes.jpg);
+                                        background-position: right top;
+                                        background-repeat: no-repeat;
+                                    }
+                                </style>
+
+                                <div class="panel panel-default">
+                                    <div class="panel panel-heading">
+                                        Ingrese los datos
+                                    </div>
+                                    <div class="panel panel-body">
+                                        <form id="empleados" class="" >                                           
+                                            <div class="form-group has-success has-feedback" id="gcodigo">
+                                                <label for="reg_codigo" class="control-label col-sm-3">Codigo (DNI)</label>
+                                                <div class="col-sm-9 " id="ccodigo" >
+                                                    <input required type="text" class="form-control" id="reg_codigo" placeholder="DNI" aria-describedby="inputSuccess3Status" >
+                                                    <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+                                                    <span id="inputWarning2Status" class="sr-only">(warning)</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_nombres" class="control-label col-sm-3 ">Nombres</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="text" class="form-control" id="reg_nombres" placeholder="Nombres">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_apellidos_p" class="control-label col-sm-3">Apellidos Paterno</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="text" class="form-control" id="reg_apellidos_p" placeholder="Apellidos Paterno">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_apellidos_m" class="control-label col-sm-3">Apellidos Materno</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="text" class="form-control" id="reg_apellidos_m" placeholder="Apellidos Materno">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="reg_edad" class="control-label col-sm-3">Edad</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="number" class="form-control" id="reg_edad" placeholder="Edad">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_email" class="control-label col-sm-3">E-mail</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="email" class="form-control" id="reg_email" placeholder="E-mail">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_telf" class="control-label col-sm-3">Nº Telf/Cel</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="email" class="form-control" id="reg_telf" placeholder="Nº Telf/Cel">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_fech" class="control-label col-sm-3">Fecha Nac.</label>
+                                                <div class="col-sm-9" >
+                                                    <input required type="date" class="form-control" id="reg_fech" placeholder="E-mail">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reg_direccion" class="control-label col-sm-3">Direccion</label>
+                                                <div class="col-sm-9" >
+                                                    <textarea required rows="3" class="form-control" id="reg_direccion" placeholder="Direccion"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group" >
+                                                <label for="cargo" class="control-label col-sm-3">Cargo</label>
+                                                <div class="btn-group col-sm-9" data-toggle="buttons" onChange="myFunction()">
+                                                    <label class="btn btn-primary active">
+                                                        <input type="radio" autocomplete="off" checked name="reg_cargo" value="Secretaria" > Secretaria
+                                                    </label>
+                                                    <label class="btn btn-primary">
+                                                        <input type="radio" autocomplete="off" name="reg_cargo" value="Docente"> Docente
+                                                    </label>
+                                                    <label class="btn btn-primary">
+                                                        <input type="radio" autocomplete="off" name="reg_cargo" value="Auxiliar"> Auxiliar
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div id="demo" >
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-sm-3" ></div>
+                                                <div class="col-sm-9" ><button type="submit" class="btn btn-primary">Guardar</button> </div>
+
+                                            </div>
+
+
+
+                                        </form>
+                                    </div>
+
                                 </div>
-                                <div class="panel panel-body">
-                                    <form id="empleados">
-                                        <div class="form-group">
-                                            <label for="reg_codigo" class="control-label col-xs-2">Codigo (DNI)</label>
-                                            <div class="col-xs-10">
-                                                <input required type=number class="form-control" id="reg_codigo" placeholder="DNI">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_nombres" class="control-label col-xs-2">Nombres</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="text" class="form-control" id="reg_nombres" placeholder="Nombres">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_apellidos_p" class="control-label col-xs-2">Apellidos Paterno</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="text" class="form-control" id="reg_apellidos_p" placeholder="Apellidos Paterno">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_apellidos_m" class="control-label col-xs-2">Apellidos Materno</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="text" class="form-control" id="reg_apellidos_m" placeholder="Apellidos Materno">
-                                            </div>
+
+                                <div class="container visible-lg">
+                                    <div class="panel panel-default">
+                                        <div class="panel panel-heading">Lista de Trabajadores</div>
+                                        <div class="panel panel-body">
+                                            <table class="table  table-responsive ">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Codigo</th>
+                                                        <th>Nombres</th>
+                                                        <th>A Paterno</th>
+                                                        <th>A Materno</th>
+                                                        <th>Edad</th>
+                                                        <th>Tel/<th>
+                                                        <th>Fech. Nac<th>
+                                                        <th>Cargo<th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="reg_edad" class="control-label col-xs-2">Edad</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="number" class="form-control" id="reg_edad" placeholder="Edad">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_email" class="control-label col-xs-2">E-mail</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="email" class="form-control" id="reg_email" placeholder="E-mail">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_telf" class="control-label col-xs-2">Nº Telf/Cel</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="email" class="form-control" id="reg_telf" placeholder="Nº Telf/Cel">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_fech" class="control-label col-xs-2">Fecha de Nacimiento</label>
-                                            <div class="col-xs-10" >
-                                                <input required type="date" class="form-control" id="reg_fech" placeholder="E-mail">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="reg_direccion" class="control-label col-xs-2">Direccion</label>
-                                            <div class="col-xs-10" >
-                                                <textarea required rows="3" class="form-control" id="reg_direccion" placeholder="Direccion"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group" >
-                                            <label for="cargo" class="control-label col-xs-2">Cargo</label>
-                                            <div class="btn-group col-xs-10" data-toggle="buttons" onChange="myFunction()">
-                                                <label class="btn btn-primary active">
-                                                    <input type="radio" autocomplete="off" checked name="reg_cargo" value="Secretaria" > Secretaria
-                                                </label>
-                                                <label class="btn btn-primary">
-                                                    <input type="radio" autocomplete="off" name="reg_cargo" value="Docente"> Docente
-                                                </label>
-                                                <label class="btn btn-primary">
-                                                    <input type="radio" autocomplete="off" name="reg_cargo" value="Auxiliar"> Auxiliar
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div id="demo" >
-
-                                            </div>
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-
-
-                                    </form>
+                                    </div>
                                 </div>
 
                             </div>
-
 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
@@ -426,7 +472,7 @@
 
         </div>
 
-        
+
 
         <!-- Menu otra vista -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
