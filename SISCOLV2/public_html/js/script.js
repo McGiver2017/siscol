@@ -87,21 +87,81 @@ function editartabla(fila) {
     var nombre = $('#example tr:eq(' + fila + ') td:eq(1)').text();
     var appat = $('#example tr:eq(' + fila + ') td:eq(2)').text();
     var apmat = $('#example tr:eq(' + fila + ') td:eq(3)').text();
-    var edad = $('#example tr:eq(' + fila + ') td:eq(4)').text();   
+    var edad = $('#example tr:eq(' + fila + ') td:eq(4)').text();
     var tefl = $('#example tr:eq(' + fila + ') td:eq(5)').text();
     var nac = $('#example tr:eq(' + fila + ') td:eq(6)').text();
-    
-    
+
+
     $('#edreg_codigo').val(codigo);
     $('#edreg_nombres').val(nombre);
     $('#edreg_apellidos_p').val(appat);
     $('#edreg_apellidos_m').val(apmat);
-    $('#edreg_edad').val(edad);   
-    $('#edreg_telf').val(tefl);   
+    $('#edreg_edad').val(edad);
+    $('#edreg_telf').val(tefl);
     $('#edreg_fech').val(nac);
-    
+
     $('#editarempleados').modal();
+}
+function editartablaalum(fila) {
+
+    var codigo = $('#datosalumnos tr:eq(' + fila + ') td:eq(0)').text();
+    var nombre = $('#datosalumnos tr:eq(' + fila + ') td:eq(1)').text();
+    var appat = $('#datosalumnos tr:eq(' + fila + ') td:eq(2)').text();
+    var apmat = $('#datosalumnos tr:eq(' + fila + ') td:eq(3)').text();
+    var sexo = $('#datosalumnos tr:eq(' + fila + ') td:eq(4)').text();
+    var edad = $('#datosalumnos tr:eq(' + fila + ') td:eq(5)').text();
+    var tefl = $('#datosalumnos tr:eq(' + fila + ') td:eq(6)').text();
+    var nac = $('#datosalumnos tr:eq(' + fila + ') td:eq(7)').text();
+
+
+    $('#edareg_codigo').val(codigo);
+    $('#edareg_nombres').val(nombre);
+    $('#edareg_apellidos_p').val(appat);
+    $('#edareg_apellidos_m').val(apmat);
+    $('#sexsel').html(checkedsexo(sexo))
+    $('#edareg_edad').val(edad);
+    $('#edareg_telf').val(tefl);
+    $('#edareg_fech').val(nac);
+
+    $('#editaralumnos').modal();
 }
 $(document).ready(function () {
     $('#example').DataTable();
+    $('#datosalumnos').DataTable();
+    $('#datosalumnosas').DataTable();
+    $('#mostrar').fadeOut(0);
 });
+function actualizar() {
+    alert("Actualizado");
+
+}
+function checkedsexo(sexo) {
+    var salida;
+    if (sexo == "Masculino") {
+        salida = "<label class='btn btn-primary active'><input type='radio' autocomplete='off' checked name='aereg_sexo' value='Masculino'> Masculino</label>  <label class='btn btn-primary'> <input type='radio' autocomplete='off' name='aereg_sexo' value='Femenino'> Femenino</label>";
+    } else {
+        salida = "<label class='btn btn-primary'><input type='radio' autocomplete='off'  name='aereg_sexo' value='Masculino'> Masculino </label> <label class='btn btn-primary active'> <input type='radio' checked autocomplete='off' name='aereg_sexo' value='Femenino'> Femenino</label>";
+
+    }
+    return salida;
+
+}
+function mostrarinfo(fila) {
+    var codigo = $('#datosalumnos tr:eq(' + fila + ') td:eq(0)').text();
+    var nombre = $('#datosalumnos tr:eq(' + fila + ') td:eq(1)').text();
+    var appat = $('#datosalumnos tr:eq(' + fila + ') td:eq(2)').text();
+    var apmat = $('#datosalumnos tr:eq(' + fila + ') td:eq(3)').text();
+    var sexo = $('#datosalumnos tr:eq(' + fila + ') td:eq(4)').text();
+    var edad = $('#datosalumnos tr:eq(' + fila + ') td:eq(5)').text();
+    $('#dpnombre').html("<label class='label label-default' >"+nombre+"</label>")
+    $('#dpapellidop').html("<label class='label label-default' >"+appat+"</label>")
+    $('#dpapellidom').html("<label class='label label-default' >"+apmat+"</label>")
+    $('#dpsexo').html("<label class='label label-default' >"+sexo+"</label>")
+    $('#dpedad').html("<label class='label label-default' >"+edad+"</label>")
+    $('#datosalumnosas').fadeOut("slow");
+    $('#mostrar').show("slow");
+}
+function volver() {
+    $('#datosalumnosas').show("slow");
+    $('#mostrar').fadeOut("slow");
+}
