@@ -62,7 +62,7 @@ $(document).ready(function () {
             'display': 'block',
         });
 
-       
+
     });
 //    $('#gcodigo').keypress(function () {
 //
@@ -82,9 +82,25 @@ function myFunction() {
     }
 
 }
-function editartabla() {
-    var tabla = $('#personal').text();
-    alert(tabla);
+function editartabla(fila) {
+    var codigo = $('#example tr:eq(' + fila + ') td:eq(0)').text();
+    var nombre = $('#example tr:eq(' + fila + ') td:eq(1)').text();
+    var appat = $('#example tr:eq(' + fila + ') td:eq(2)').text();
+    var apmat = $('#example tr:eq(' + fila + ') td:eq(3)').text();
+    var edad = $('#example tr:eq(' + fila + ') td:eq(4)').text();   
+    var tefl = $('#example tr:eq(' + fila + ') td:eq(5)').text();
+    var nac = $('#example tr:eq(' + fila + ') td:eq(6)').text();
+    
+    
+    $('#edreg_codigo').val(codigo);
+    $('#edreg_nombres').val(nombre);
+    $('#edreg_apellidos_p').val(appat);
+    $('#edreg_apellidos_m').val(apmat);
+    $('#edreg_edad').val(edad);   
+    $('#edreg_telf').val(tefl);   
+    $('#edreg_fech').val(nac);
+    
+    $('#editarempleados').modal();
 }
 $(document).ready(function () {
     $('#example').DataTable();

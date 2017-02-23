@@ -273,9 +273,9 @@
                                         <td>Portocarrero</td>
                                         <td>21</td>
                                         <td>959651779</td>
-                                        <td>05/09/2017</td>
+                                        <td>2017-09-05</td>
                                         <td>Administrador</td>
-                                        <td><button onclick="editartabla()"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+                                        <td><button onclick="editartabla(2)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
                                     </tr>
                                     <tr>
                                         <td>71450637</td>
@@ -284,16 +284,83 @@
                                         <td>Torres</td>
                                         <td>21</td>
                                         <td>959651779</td>
-                                        <td>05/09/2017</td>
+                                        <td>1995-06-02</td>
                                         <td>Administrador</td>
-                                        <td><button onclick="editartabla()"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+                                        <td><button onclick="editartabla(3)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
 
+                            <div class="modal fade" id="editarempleados" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Llenar Datos</h4>
+                                        </div>
+                                        <div class="modal-body" id="contenido">
+                                            <form id="empleados" class="" >                                           
+                                                <div class="form-group " id="gcodigo">
+                                                    <label for="reg_codigo" class="control-label col-sm-3">Codigo (DNI)</label>
+                                                    <div class="col-sm-9 " id="ccodigo" >
+                                                        <input required type="text" class="form-control" id="edreg_codigo" placeholder="DNI" maxlength="8" aria-describedby="inputSuccess3Status" disabled="true">
 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="reg_nombres" class="control-label col-sm-3 ">Nombres</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="text" class="form-control" id="edreg_nombres" placeholder="Nombres">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="reg_apellidos_p" class="control-label col-sm-3">Ap. Paterno</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="text" class="form-control" id="edreg_apellidos_p" placeholder="Apellidos Paterno">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="reg_apellidos_m" class="control-label col-sm-3">Ap. Materno</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="text" class="form-control" id="edreg_apellidos_m" placeholder="Apellidos Materno">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="reg_edad" class="control-label col-sm-3">Edad</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="number" class="form-control"  maxlength="2" id="edreg_edad" placeholder="Edad">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="reg_telf" class="control-label col-sm-3">Nº Telf/Cel</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="email" class="form-control" id="edreg_telf" maxlength="9" placeholder="Nº Telf/Cel">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="reg_fech" class="control-label col-sm-3">Fecha Nac.</label>
+                                                    <div class="col-sm-9" >
+                                                        <input required type="date" class="form-control" id="edreg_fech" placeholder="E-mail">
+                                                    </div>
+                                                </div>
+                                               
+                 
+                                               
+                                    
+                                            </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="enviar()">Actualizar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
 
 
                         </div>
@@ -560,12 +627,12 @@
                 <p>&copy; Company 2015</p>
             </footer>
         </div> <!-- /container -->        
-       
 
 
-       
+
+
         <script src="js/script.js" type="text/javascript"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        
+
     </body>
 </html>
