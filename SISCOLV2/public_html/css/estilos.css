@@ -59,5 +59,16 @@ body{
         border-top:0 none;
     }
 }
+input:required:invalid, input:focus:invalid {
 
+    /*background-image: url(img/succes.jpg);*/
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+input:required:valid {
+
+    /*background-image: url(img/succes.jpg);*/
+    background-position: right top;
+    background-repeat: no-repeat;
+}
 

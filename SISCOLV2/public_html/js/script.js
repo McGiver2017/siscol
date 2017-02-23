@@ -61,6 +61,8 @@ $(document).ready(function () {
         $('#group_curso').css({
             'display': 'block',
         });
+
+       
     });
 //    $('#gcodigo').keypress(function () {
 //
@@ -80,3 +82,10 @@ function myFunction() {
     }
 
 }
+function editartabla() {
+    var tabla = $('#personal').text();
+    alert(tabla);
+}
+$(document).ready(function () {
+    $('#example').DataTable();
+});
