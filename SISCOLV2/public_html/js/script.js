@@ -158,10 +158,13 @@ function mostrarinfo(fila) {
     $('#dpapellidom').html("<label class='label label-default' >"+apmat+"</label>")
     $('#dpsexo').html("<label class='label label-default' >"+sexo+"</label>")
     $('#dpedad').html("<label class='label label-default' >"+edad+"</label>")
-    $('#datosalumnosas').fadeOut("slow");
+    $('#datosalumnosas').hide("slow");
+    $('#mostrarp').hide("slow");
     $('#mostrar').show("slow");
+    
 }
 function volver() {
     $('#datosalumnosas').show("slow");
-    $('#mostrar').fadeOut("slow");
+     $('#mostrarp').show("slow");
+    $('#mostrar').hide("slow");
 }

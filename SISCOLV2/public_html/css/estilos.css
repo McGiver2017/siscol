@@ -1,6 +1,10 @@
 body{
     /*background:url('http://www.wallpaperup.com/uploads/wallpapers/2013/06/28/110355/baed1c59d593c2668151c8f47f1f698a.jpg');*/
-    padding:0px;
+   
+    
+    padding-bottom: 40px;
+    color: #5a5a5a;
+
 }
 
 .panel-default{
